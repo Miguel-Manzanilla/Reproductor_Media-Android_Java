@@ -1,0 +1,28 @@
+{
+  "recursos_list": [
+    {
+      "nombre": "Lori Meyers",
+      "descripcion": "El tiempo pasará",
+      "tipo": "0",
+      "URI": "eltiempopasara",
+      "imagen": "eltiempo.jpg"},
+    {
+      "nombre": "Lori Meyers",
+      "descripcion": "Emborracharme",
+      "tipo": "2",
+      "URI": "https://riberadeltajo.es/PMDM_ut4/LME.mp4",
+      "imagen": "emborracharme.jpg"},
+    {
+      "nombre": "Manuel Martínez",
+      "descripcion": "Truco de magia",
+      "tipo": "1",
+      "URI": "magia",
+      "imagen": "magic.jpg"},
+    {
+      "nombre": "Metallica",
+      "descripcion": "Enter Sandman",
+      "tipo": "0",
+      "URI": "entersandman",
+      "imagen": "entersandman.jpg"}
+  ]
+}
