@@ -3,6 +3,7 @@ package es.riberadeltajo.tarea6_miguelmanzanillaocaa;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MediaController.M
         mc.setMediaPlayer(this);
         mc.setAnchorView(findViewById(R.id.constraint));
         ListaAudios.MiAdaptador=new MyaudioRecyclerViewAdapter(ListaAudios.audios);
-        SharedPreferences misprefes=getSharedPreferences("prefeAudio",MODE_PRIVATE);
+        SharedPreferences misprefes= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if (ListaAudios.MiAdaptador!=null){
             ListaAudios.media[0] = misprefes.getBoolean("audio",true);
             ListaAudios.media[1] = misprefes.getBoolean("video",true);
@@ -86,7 +87,10 @@ public class MainActivity extends AppCompatActivity implements MediaController.M
     @Override
     public int getCurrentPosition() {
         //duracion exacta al momento
-        return ListaAudios.mp.getCurrentPosition();
+        if (ListaAudios.mp!=null){
+            return ListaAudios.mp.getCurrentPosition();
+        }
+        return 0;
     }
 
     @Override

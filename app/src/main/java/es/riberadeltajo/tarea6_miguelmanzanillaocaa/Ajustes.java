@@ -26,7 +26,7 @@ public class Ajustes extends AppCompatActivity implements SharedPreferences.OnSh
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-        SharedPreferences misprefesDefault = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences misprefesDefault = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         misprefesDefault.registerOnSharedPreferenceChangeListener(this);
         boolean audio = misprefesDefault.getBoolean("audio", true);
         ListaAudios.media[0] = audio;
@@ -39,12 +39,13 @@ public class Ajustes extends AppCompatActivity implements SharedPreferences.OnSh
             @Override
             public void onClick(View v) {
                 ListaAudios.FiltrarArray();
-                SharedPreferences misprefes=getSharedPreferences("prefeAudio",MODE_PRIVATE);
+                SharedPreferences misprefes=PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor ed =misprefes.edit();
-                ed.putBoolean("audio",audio);
-                ed.putBoolean("video",video);
-                ed.putBoolean("stream",stream);
+                ed.putBoolean("audio",ListaAudios.media[0] );
+                ed.putBoolean("video",ListaAudios.media[1] );
+                ed.putBoolean("stream",ListaAudios.media[2] );
                 ed.apply();
+                ed.commit();
                 finish();
             }
         });

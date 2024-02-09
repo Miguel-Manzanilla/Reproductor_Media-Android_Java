@@ -5,43 +5,15 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF5722"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/btnPlay"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        android:foregroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_play_arrow_24" />
-
-    <ImageButton
-        android:id="@+id/btnPause"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/btnPlay"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_pause" />
-
-    <ImageButton
-        android:id="@+id/btnStop"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/btnPause"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_stop_24" />
-
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="400dp"
-        android:layout_height="550dp"
-        android:layout_marginBottom="124dp"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="es.riberadeltajo.tarea6_miguelmanzanillaocaa.audioFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
