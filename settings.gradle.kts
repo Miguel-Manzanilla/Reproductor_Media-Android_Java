@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TAREA6_MIGUELMANZANILLAOCAÑA"
+rootProject.name = "AudiosMedia"
 include(":app")
  
